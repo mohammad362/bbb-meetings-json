@@ -1,5 +1,4 @@
-# First Release
-
+# BBB-meetings-json
 ## Export BigBlueButton running meetings details to JSON.
 
 ### Usage
