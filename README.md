@@ -7,8 +7,10 @@
 Create "config.env" file and fill required fields.  
 
 Ex:  
+```
 API_URL = 'https://example.com/bigbluebutton/api/'  
 API_SECRET_KEY = '123456789abcdef'  
+```
 <br /><br />
 #### docker-compose:
 ```yaml
