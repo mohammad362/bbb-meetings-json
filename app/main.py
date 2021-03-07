@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 import requests
 import json
-import xmltodict
 import imp
+import xmltodict
 
 app = FastAPI()
 def getVarFromFile(filename):
