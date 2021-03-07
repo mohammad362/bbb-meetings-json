@@ -17,5 +17,5 @@ async def root():
     URL = (data.API_URL+'getMeetings')
     payload = 'checksum='+data.API_SECRET_KEY
     response = requests.get(URL, params=payload).content
-    results = xmltodict.parse(response)
+    results = xmltodict.parse(response, force_list={'meeting'})
     return results
