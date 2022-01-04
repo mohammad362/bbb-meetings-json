@@ -3,7 +3,17 @@
 
 ### Usage
 
-Add your API Url and SECRET KEY in docker-compose.yml file.  
+Add your API URL and SECRET KEY in docker-compose.yml file.  
+
+API URL Example:
+```
+bbb.example.com/bigbluebutton/api
+```
+
+Get API SECRET KEY by running this command:
+```
+bbb-conf --secret
+```
 
 <br /><br />
 #### docker-compose:
