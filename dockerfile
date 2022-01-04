@@ -1,10 +1,10 @@
-FROM python:3.7
+FROM python:3.9.9-slim-buster
 EXPOSE 8000
 
 COPY ./app /app
 
 RUN pip3 install fastapi && \
-    pip3 install uvicorn &&\
+    pip3 install uvicorn && \
     pip3 install xmltodict &&\
     pip3 install requests
 

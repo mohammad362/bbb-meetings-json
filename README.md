@@ -3,13 +3,8 @@
 
 ### Usage
 
-Create "config.env" file and fill required fields.  
+Add your API Url and SECRET KEY in docker-compose.yml file.  
 
-Ex:  
-```
-API_URL = 'https://example.com/bigbluebutton/api/'  
-API_SECRET_KEY = '123456789abcdef'  
-```
 <br /><br />
 #### docker-compose:
 ```yaml
@@ -20,8 +15,9 @@ services:
     image: mohammad362/bbb-meetings-json:1.0
     ports:
       - "8000:8000"
-    volumes:
-      - ./config.env:/app/config.env
+    environment:
+      - API_URL=
+      - API_SECRET_KEY=
     restart: unless-stopped
 ```
 <br /><br />

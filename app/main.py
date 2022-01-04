@@ -1,21 +1,24 @@
 from fastapi import FastAPI
 import requests
-import json
-import imp
+import os
 import xmltodict
+import hashlib
+
+API_URL = os.environ['API_URL']
+API_SECRET_KEY = os.environ['API_SECRET_KEY']
+
+checksum_hash = hashlib.sha1(f"getMeetings{API_SECRET_KEY}".encode())
+checksum = checksum_hash.hexdigest()
+print(API_URL)
+print(API_SECRET_KEY)
+print(checksum)
 
 app = FastAPI()
-def getVarFromFile(filename):
-    f = open(filename)
-    global data
-    data = imp.load_source('data', filename, f)
-    f.close()
 
 @app.get("/")
 async def root():
-    getVarFromFile('/app/config.env')
-    URL = (data.API_URL+'getMeetings')
-    payload = 'checksum='+data.API_SECRET_KEY
-    response = requests.get(URL, params=payload).content
+    get_meetings_url = f'{API_URL}/getMeetings?checksum={checksum}'
+    print(get_meetings_url)
+    response = requests.get(get_meetings_url).content
     results = xmltodict.parse(response, force_list={'meeting'})
     return results
