@@ -9,9 +9,6 @@ API_SECRET_KEY = os.environ['API_SECRET_KEY']
 
 checksum_hash = hashlib.sha1(f"getMeetings{API_SECRET_KEY}".encode())
 checksum = checksum_hash.hexdigest()
-print(API_URL)
-print(API_SECRET_KEY)
-print(checksum)
 
 app = FastAPI()
 
