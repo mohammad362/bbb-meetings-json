@@ -7,7 +7,8 @@ services:
       - "8000:8000"
     environment:
       - API_URL=   # bbb.exmaple.com/bigbluebutton/api
-      - API_SECRET_KEY=   #Yes/No
+      - API_SECRET_KEY=   #bbb-conf --secret
+      - USE_AUTH=    #Yes/No
       - AUTH_USERNAME=   #username
       - AUTH_PASSWORD=   #yourpassword
     restart: unless-stopped
