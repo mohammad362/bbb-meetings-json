@@ -8,4 +8,6 @@ services:
     environment:
       - API_URL=
       - API_SECRET_KEY=
+      - AUTH_USERNAME=
+      - AUTH_PASSWORD=
     restart: unless-stopped
