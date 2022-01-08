@@ -18,16 +18,19 @@ bbb-conf --secret
 <br /><br />
 #### docker-compose:
 ```yaml
-version: '3' 
-services: 
+version: '3'
+services:
   bbb-meetings-json:
     container_name: "bbb-meetings-json"
     image: mohammad362/bbb-meetings-json:1.2
     ports:
       - "8000:8000"
     environment:
-      - API_URL=
-      - API_SECRET_KEY=
+      - API_URL=   # bbb.exmaple.com/bigbluebutton/api
+      - API_SECRET_KEY=   #bbb-conf --secret
+      - USE_AUTH=    #Yes/No
+      - AUTH_USERNAME=   #username
+      - AUTH_PASSWORD=   #yourpassword
     restart: unless-stopped
 ```
 <br /><br />
